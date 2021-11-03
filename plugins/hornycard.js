@@ -6,7 +6,7 @@ let handler = async (m, { conn }) => {
 }
 
 handler.help = ['hornycard', 'hornylicense']
-handler.tags = ['maker']
+handler.tags = ['fun']
 
 handler.command = /^(horny(card|license))$/i
 
