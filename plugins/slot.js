@@ -6,7 +6,7 @@ ${usedPrefix + command} 100
 means you bet 100 XP.
 
 *JACKPOT:* your bet is doubled
-*Unlucky:* +1 XP
+*Lucky:* +5 XP
 *Lose:* your bet is taken`.trim()
     if (!args[0]) throw fa
     if (isNaN(args[0])) throw fa
