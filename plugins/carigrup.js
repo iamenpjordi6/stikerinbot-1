@@ -1,5 +1,5 @@
 let handler = async (m, { text, usedPrefix, command }) => {
-    if (!text) throw `uhm.. cari apa?\n\ncontoh:\n${usedPrefix + command} mabar`
+    if (!text) throw `uhm.. what are you looking for ?\n\nExample:\n${usedPrefix + command} study`
     let res = await carigroup(text, 'name')
     if (!res.length) throw 'Group not found ¯\_(ツ)_/¯'
     let teks = res.map(res => res.subject + '\n' + res.link).join('\n\n')
