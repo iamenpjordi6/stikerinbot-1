@@ -1,5 +1,5 @@
 let fs = require('fs')
-global.owner = ['917428849575', '447441410404'] // Letakan nomor kamu disini
+global.owner = ['6283128734012', '6288709645535'] // Letakan nomor kamu disini
 global.mods = [] // Moderator?
 global.prems = JSON.parse(fs.readFileSync('./src/premium.json')) // Pengguna premium tidak memerlukan limit
 global.APIs = { // API Prefix
@@ -30,10 +30,10 @@ global.APIKeys = { // APIKey nya disini
 }
 
 // Sticker WM
-global.packname = 'MilfBOT❤️'
-global.author = 'Jordi'
+global.packname = '❤️'
+global.author = 'ariffb'
 
-global.wait = '_*Processing, Please Wair...*_'
+global.wait = '_*tunggu sedang di proses...*_'
 global.eror = '_*Server Error*_'
 global.fla = 'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=sketch-name&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&fillTextType=1&fillTextPattern=Warning!&text='
 
