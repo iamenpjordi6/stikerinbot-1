@@ -10,12 +10,12 @@ let handler  = async (m, { conn, args, usedPrefix, command }) => {
     	.then(json => {
     		conn.updatePresence(m.chat, Presence.composing) 
     		conn.reply(m.chat, `*Wait a moment . . .*`, m)
-	conn.sendFile(m.chat, json.url, 'blowjoc.mp4', '', m, false, { asDocument: false } )	
+	conn.sendFile(m.chat, json.url, 'blowjoc.mp4', '', m, false, { asDocument: true } )	
 	}) .catch(() => { conn.reply(m.chat, `*There is an error . . .*`, m) })
   			
 	}
 handler.help = ['blowjob']
-handler.tags = ['anime']
+handler.tags = ['fun']
 handler.command = /^(blowjob)$/i
 handler.owner = false
 handler.mods = false
