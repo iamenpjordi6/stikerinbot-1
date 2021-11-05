@@ -8,7 +8,7 @@ let handler = async (m, { text, usedPrefix, command }) => {
 handler.help = ['searchgroup <search>']
 handler.tags = ['tools']
 
-handler.command = /^carig(ro?up|c)/i
+handler.command = /^searchg(ro?up|c)/i
 
 module.exports = handler
 
