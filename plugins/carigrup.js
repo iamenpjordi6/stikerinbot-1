@@ -5,7 +5,7 @@ let handler = async (m, { text, usedPrefix, command }) => {
     let teks = res.map(res => res.subject + '\n' + res.link).join('\n\n')
     m.reply(teks)
 }
-handler.help = ['carigrup <search>']
+handler.help = ['searchgroup <search>']
 handler.tags = ['tools']
 
 handler.command = /^carig(ro?up|c)/i
