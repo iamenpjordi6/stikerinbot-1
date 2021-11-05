@@ -9,7 +9,7 @@ let handler  = async (m, { command, conn, text }) => {
     kelas: ' '
   }, 'APIKEY'), 'nulis.jpg', 'Nahh it\'s done...', m)
 }
-handler.help = new Array(6).fill('lazywrite').map((v, i) => v + (i + 1) + ' <teks>')
+handler.help = new Array(6).fill('lazywrite').map((v, i) => v + (i + 1) + ' <text>')
 handler.tags = ['nulis']
 
 handler.command = /^lazywrite[1-6]?$/i
