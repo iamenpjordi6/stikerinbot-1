@@ -10,18 +10,18 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     if (!json.status) throw json
     let { thumb, positif, negatif } = json.result
     let caption = `
-*Nama kamu:* ${json.result.nama1}
-*Nama doi:* ${json.result.nama2}
+*Name One:* ${json.result.nama1}
+*Name Two:* ${json.result.nama2}
 
-*Positif:*
+*Positive:*
 ${positif}
 
-*Negatif:*
+*Negative:*
 ${negatif}
 `.trim()
     conn.sendFile(m.chat, thumb, 'file.png', caption, m, 0, { thumbnail: await (await fetch(thumb)).buffer() })
 }
-handler.help = ['jodoh'].map(v => v + ' <nama>|<nama doi>')
+handler.help = ['jodoh'].map(v => v + ' <name>|<name2>')
 handler.tags = ['fun']
 handler.command = /^(jodoh)$/i
 
