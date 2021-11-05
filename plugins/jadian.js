@@ -1,16 +1,22 @@
-let handler = async (m, { conn, participants, command, usedPrefix }) => {
-    let member = participants.map(u => u.jid)
-    let orang
-    if (/ku/i.test(command)) orang = m.sender
-    else orang = member[Math.floor(Math.random() * member.length)]
-    let jodoh = member[Math.floor(Math.random() * member.length)]
-    let jawab = `@${orang.replace(/@.+/, '')} ❤️ @${jodoh.replace(/@.+/, '')}`.trim()
-    let mentionedJid = [orang, jodoh]
-    await conn.sendButton(m.chat, jawab, '© stikerin', `${command}`, usedPrefix + command, m, { contextInfo: { mentionedJid } })
+let R = Math.random
+let Fl = Math.floor
+let toM = a => '@' + a.split('@')[0]
+function handler(m, { groupMetadata }) {
+    let ps = groupMetadata.participants.map(v => v.jid)
+    let a = ps[Fl(R() * ps.length)]
+    let b
+    do b = ps[Fl(R() * ps.length)]
+    while (b === a)
+    m.reply(`${toM(a)} ❤️ ${toM(b)}`, null, {
+        contextInfo: {
+            mentionedJid: [a, b]
+        }
+    })
 }
-handler.help = ['jodohin', 'jodohku']
-handler.tags = ['fun']
-handler.command = /^jodoh(in|ku)|jadian$/i
+handler.help = ['invented']
+handler.tags = ['main']
+handler.command = ['invented']
 handler.group = true
+handler.limit = true
 
 module.exports = handler
