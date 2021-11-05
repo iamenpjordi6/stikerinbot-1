@@ -1,34 +1,32 @@
-const fetch = require('node-fetch')
+const { joox } = require('../lib/scrape_joox')
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
-    if (!text) throw `uhm.. judul nya apa?\n\ncontoh:\n${usedPrefix + command} akad`
-    if (isUrl(text)) throw `uhm.. judul kak bukan pake url\n\ncontoh:\n${usedPrefix + command} akad`
-
-    let res = await fetch(global.API('pencarikode', '/download/joox', { search: text }, 'apikey'))
-    if (!res.ok) throw await `${res.status} ${res.statusText}`
-    let json = await res.json()
-    if (!json.status) throw json
-    let { judul, artist, album, img_url, mp3_url, filesize, duration } = json.result
-    let pesan = `
-Judul: ${judul}
-Artis: ${artist}
-Album: ${album}
-Ukuran File: ${filesize}
-Durasi: ${duration}
-
-© stikerin
-    `.trim()
-
-    conn.sendFile(m.chat, img_url, 'eror.jpg', pesan, m, 0, { thumbnail: await (await fetch(img_url)).buffer() })
-    conn.sendFile(m.chat, mp3_url, 'error.mp3', '', m, 0, { asDocument: global.db.data.chats[m.chat].useDocument, mimetype: 'audio/mp4' })
-
+    if (!text) throw `*This command is to search for joox songs by search*\n\nexample:\n${usedPrefix + command} playdate`
+    if (isUrl(text)) throw `*This command is to search for joox songs based on search not links*\n\nexample:\n${usedPrefix + command} playdate`
+    joox(text).then(res => {
+        let joox = JSON.stringify(res)
+        let jjson = JSON.parse(joox)
+        let random = Math.floor(Math.random() * jjson.data.length)
+        let hasil = jjson.data[random]
+        let json = hasil
+        let pesan = `
+*Singer:* ${json.penyanyi}
+*Title:* ${json.lagu}
+*Album:* ${json.album}
+*Published:* ${json.publish}
+*Link:* ${json.mp3}
+`.trim()
+        conn.sendFile(m.chat, json.img, 'error.jpg', pesan, m, false, { thumbnail: Buffer.alloc(0) })
+        conn.sendFile(m.chat, json.mp3, 'error.mp3', '', m, false, { mimetype: 'audio/mp4' })
+    })
 }
-handler.help = ['joox'].map(v => v + ' <judul>')
+
+handler.help = ['joox'].map(v => v + ' <title>')
 handler.tags = ['downloader']
 handler.command = /^joox$/i
-
+handler.limit = true 
+handler.premium = true // hapus aja kalau saya sengaja premium makan kuota termux :)
 module.exports = handler
-
 const isUrl = (text) => {
     return text.match(new RegExp(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&/=]*)/, 'gi'))
 }
