@@ -29,7 +29,7 @@ global.APIKeys = { // APIKey nya disini
   'https://pencarikode.xyz': 'pais',
   'https://api.xteam.xyz': 'apikeymu',
   'https://zahirr-web.herokuapp.com': 'zahirgans',
-  'https://api.zeks.xyz': 'apivinz',
+  'https://api.zeks.xyz': 'TJpDLutSDYzzlMF2OIa4zYeTfG4',
   'https://leyscoders-api.herokuapp.com': 'dappakntlll',
   'https://dhnjing.xyz': 'e2645065aaced89861b4'
 }
