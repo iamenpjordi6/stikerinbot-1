@@ -14,7 +14,7 @@ let handler = async(m, { conn }) => {
 
 }
 handler.help = ['neko']
-handler.tags = ['internet']
+handler.tags = ['anime']
 handler.command = /^cuddle$/i
 
 module.exports = handler
