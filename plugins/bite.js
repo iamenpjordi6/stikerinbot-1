@@ -14,8 +14,8 @@ let handler = async(m, { conn }) => {
   
 
 }
-handler.help = ['anime']
-handler.tags = ['fun']
+handler.help = ['bite']
+handler.tags = ['anime']
 handler.command = /^bite$/i
 
 module.exports = handler
