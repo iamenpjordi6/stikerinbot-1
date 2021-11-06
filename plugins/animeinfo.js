@@ -23,6 +23,6 @@ let animeingfo = `✨️ *Title:* ${title}
   conn.sendFile(m.chat, image_url, '', animeingfo, m)
 }
 handler.help = ['anime <title>']
-handler.tags = ['internet']
+handler.tags = ['anime']
 handler.command = /^(anime|animeinfo)$/i
 module.exports = handler
