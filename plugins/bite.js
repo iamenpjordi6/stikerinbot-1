@@ -14,7 +14,7 @@ let handler = async(m, { conn }) => {
   
 
 }
-handler.help = ['neko']
+handler.help = ['anime']
 handler.tags = ['fun']
 handler.command = /^bite$/i
 
