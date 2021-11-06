@@ -1,10 +1,8 @@
-let fetch = require('node-fetch')
-let handler = async(m, { conn }) => {
-  let res = await fetch('https://zxbott.herokuapp.com/husbu')
-  if (!res.ok) throw await res.text()
-  let json = await res.json()
-  if (!json.url) throw 'Error!'
-  conn.sendFile(m.chat, json.url, '', '*Here is your husbu*', m)
+let handler = async (m, { conn }) => {
+  if (!db.data.settings.nsfw) throw "NSFW mode is *OFF*";
+  m.reply('Loading...')
+  let res = `https://velgrynd.herokuapp.com/api/image/husbu`
+  conn.sendFile(m.chat, res, 'milf.jpg', '© MilfBOT', m)
 }
 handler.help = ['husbu']
 handler.tags = ['anime']
