@@ -35,7 +35,7 @@ ${'```MilfBOT```'}
 let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   let tags
   let teks = `${args[0]}`.toLowerCase()
-  let arrayMenu = ['all', 'game', 'xp', 'sticker', 'kerangajaib', 'quotes', 'admin', 'group', 'premium', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'database', 'quran', 'audio', 'jadibot', 'info', 'uncategorised', 'owner']
+  let arrayMenu = ['all', 'game', 'xp', 'sticker', 'kerangajaib', 'quotes', 'admin', 'group', 'premium', 'internet', 'anime',  'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'database', 'quran', 'audio', 'jadibot', 'info', 'uncategorised', 'owner']
   if (!arrayMenu.includes(teks)) teks = '404'
   if (teks == 'all') tags = {
     'main': 'Main',
@@ -48,6 +48,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'group': 'Group',
     'premium': 'Premium',
     'internet': 'Internet',
+    'anime': 'Anime',
     'anonymous': 'Anonymous Chat',
     'nulis': 'TextMaker & Logo',
     'downloader': 'Downloader',
@@ -88,6 +89,9 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   }
   if (teks == 'internet') tags = {
     'internet': 'Internet'
+  }
+  if (teks == 'anime') tags = {
+    'anime': 'Anime'
   }
   if (teks == 'anonymous') tags = {
     'anonymous': 'Anonymous Chat'
@@ -238,6 +242,10 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
                   "description": "Commands related to internet",
                   "rowId": `${_p}? internet`
                 }, {
+                  "title": "Anime",
+                  "description": "Commands related to Anime/Henti",
+                  "rowId": `${_p}? anime`
+                }, {
                   "title": "Anonymous",
                   "description": "Start anonymous chat",
                   "rowId": `${_p}? anonymous`
@@ -377,7 +385,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    await conn.send2ButtonLoc(m.chat, await (await fetch(fla + teks)).buffer(), text.trim(), 'made with ❤️ by Jordi', 'Bot Owner', `${_p}owner`, 'Donate', `${_p}donate`, m)
+    await conn.send2ButtonLoc(m.chat, await (await fetch(fla + teks)).buffer(), text.trim(), 'Made with ❤️ by Jordi', 'Bot Owner', `${_p}owner`, 'Donate', `${_p}donate`, m)
   } catch (e) {
     conn.reply(m.chat, 'Sorry,This menu has some errors', m)
     throw e
