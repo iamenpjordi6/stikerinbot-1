@@ -7,7 +7,7 @@ let handler = async (m, { conn }) => {
   conn.sendFile(m.chat, json.url, '', '© MilfBOT', m, 0, { thumbnail: await (await fetch(json.url)).buffer() })
 }
 handler.help = ['neko']
-handler.tags = ['internet']
+handler.tags = ['anime']
 handler.command = /^neko$/i
 
 module.exports = handler
