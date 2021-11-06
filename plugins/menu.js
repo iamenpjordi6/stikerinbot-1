@@ -243,7 +243,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
                   "rowId": `${_p}? internet`
                 }, {
                   "title": "Anime",
-                  "description": "Commands related to Anime/Henti",
+                  "description": "Commands related to Anime/Hentai",
                   "rowId": `${_p}? anime`
                 }, {
                   "title": "Anonymous",
