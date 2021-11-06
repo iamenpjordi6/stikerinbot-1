@@ -29,7 +29,7 @@ let handler = async (m, { conn, command }) => {
 	else throw json;
 };
 handler.help = ["hug", "pat", "wink"];
-handler.tags = ["fun"];
+handler.tags = ["anime"];
 handler.command = /^(hug|pat|wink)$/i;
 
 module.exports = handler;
