@@ -8,7 +8,7 @@ let handler = async (m, { conn }) => {
     conn.sendFile(m.chat, img, '', '©MilfBOT', m, 0, { thumbnail: await (await fetch(img)).buffer() })
 }
 handler.help = ['wallpaperanime']
-handler.tags = ['internet']
+handler.tags = ['anime']
 handler.command = /^(wallpaper|wp)anime$/i
 handler.limit = true
 
