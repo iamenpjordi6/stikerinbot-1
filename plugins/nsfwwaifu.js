@@ -15,7 +15,7 @@ let handler = async (m, { conn }) => {
   else throw json;
 };
 handler.help = ["nsfwwaifu", "waifunsfw"];
-handler.tags = ["fun"];
+handler.tags = ["anime"];
 
 handler.command = /^(nsfwwaifu|waifunsfw)$/i;
 
