@@ -14,7 +14,7 @@ let handler = async(m, { conn }) => {
 
 }
 handler.help = ['neko']
-handler.tags = ['fun']
+handler.tags = ['anime']
 handler.command = /^blush$/i
 
 module.exports = handler
