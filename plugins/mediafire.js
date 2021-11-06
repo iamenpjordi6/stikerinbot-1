@@ -1,7 +1,7 @@
 let fetch = require('node-fetch')
 
 let handler = async (m, { conn, args }) => {
- if (!args[0]) throw 'Uhm..url nya mana?'
+ if (!args[0]) throw 'Uhm..Send mediafire download URL?'
  let res = await fetch(API('Velgrynd', '/api/mediafire', { url: args[0] }))
  if (!res.ok) throw await res.text()
  let json = await res.json()
