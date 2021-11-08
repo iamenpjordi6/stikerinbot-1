@@ -8,6 +8,7 @@ let handler = async(m, { conn }) => {
 }
 handler.help = ['ero']
 handler.tags = ['anime']
+handler.group = true
 
 handler.command = /^(ero)$/i
 
