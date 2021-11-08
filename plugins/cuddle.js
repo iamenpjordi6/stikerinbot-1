@@ -13,7 +13,7 @@ let handler = async(m, { conn }) => {
   
 
 }
-handler.help = ['neko']
+handler.help = ['cuddle']
 handler.tags = ['anime']
 handler.command = /^cuddle$/i
 
