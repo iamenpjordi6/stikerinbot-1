@@ -8,6 +8,7 @@ let handler = async (m, { conn }) => {
 }
 handler.help = ['neko']
 handler.tags = ['anime']
+handler.group = true
 handler.command = /^neko$/i
 
 module.exports = handler
