@@ -14,7 +14,7 @@ let handler = async(m, { conn }) => {
   
 
 }
-handler.help = ['anime']
+handler.help = ['bully']
 handler.tags = ['bully']
 handler.command = /^bully$/i
 
