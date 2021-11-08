@@ -15,6 +15,7 @@ let handler = async(m, { conn }) => {
 }
 handler.help = ['blush']
 handler.tags = ['anime']
+handler.group = true
 handler.command = /^blush$/i
 
 module.exports = handler
