@@ -6,6 +6,8 @@ let handler = async (m, { conn, text, usedPrefix }) => {
         throw false
     }
     await conn.send2Button(m.chat, `Voting Started !
+    〔 VOTE 〕
+*Reason:* ${ reason}
 
 *${usedPrefix}upvote* - in support
 *${usedPrefix}devote* - in against
