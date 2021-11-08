@@ -5,8 +5,9 @@ let handler = async (m, { conn, text, usedPrefix }) => {
         await conn.sendButton(m.chat, '_There is already voting going on in this chat!_', '© MilfBOT', 'END VOTING', `${usedPrefix}endvote`, m)
         throw false
     }
-    await conn.send2Button(m.chat, `Voting Started !
-    〔 VOTE 〕
+    await conn.send2Button(m.chat, `
+    〔 VOTING STARTED 〕
+    
 *Reason:* ${text}
 
 *${usedPrefix}upvote* - in support
