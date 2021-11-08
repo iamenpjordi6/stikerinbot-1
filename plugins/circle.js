@@ -16,7 +16,7 @@ let handler = async (m, { conn, text }) => {
     quoted: m
   })
  } catch (e) {
-   m.reply('Please Wait')
+   m.reply('Please Reply to a photo')
   }
 }
 handler.help = ['circle']
