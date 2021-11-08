@@ -233,7 +233,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
 ├ delete
 ├ detect
 ├ document
-├ stiker
+├ stivker
 ├ simi
 ├ welcome
 └────
@@ -244,7 +244,7 @@ ${usedPrefix}off welcome
       throw false
   }
   m.reply(`
-*${type}* is successfully turned *${isEnable ? 'on' : 'off'} ${isAll ? 'for this bot' : isUser ? '' : 'for this chat'}
+*${type}* is successfully turned *${isEnable ? 'ON' : 'OFF'} ${isAll ? 'for this bot' : isUser ? '' : 'for this chat'}
 `.trim())
 }
 handler.help = ['on', 'off'].map(v => v + ' <option>')
