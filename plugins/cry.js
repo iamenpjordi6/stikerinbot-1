@@ -19,5 +19,6 @@ let stiker = await sticker(null, result, 'Cry', '@SHIRAORI')
 handler.help = ['cry']
 handler.tags = ['anime']
 handler.command = /^cry/i
+handler.group = true
 
 module.exports = handler
