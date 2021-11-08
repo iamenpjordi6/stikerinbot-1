@@ -8,7 +8,7 @@ let handler = async(m, { conn }) => {
 }
 handler.help = ['incest']
 handler.tags = ['anime']
-
+handler.group = true
 handler.command = /^(incest)$/i
 
 module.exports = handler
