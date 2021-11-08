@@ -8,6 +8,7 @@ let url = json[Math.floor(Math.random() * json.length)]
 await conn.sendButtonImg(m.chat, await (await fetch(url)).buffer(), 'Random Loli', '© MilfBOT', 'Get Again', '/loli', m)
 }
 handler.command = /^(loli)$/i
+handler.group = true
 handler.tags = ['anime']
 handler.help = ['fun']
 module.exports = handler
