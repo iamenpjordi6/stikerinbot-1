@@ -10,7 +10,7 @@ let handler = async (m, { conn, text }) => {
   if (!/image\/(jpe?g|png)/.test(mime)) throw `Meme ${mime} not supported`
   let img = await q.download()
   let url = await uploadImage(img)
-  let wanted = global.API('https://api.dhamzxploit.my.id/api/canvas/circle?url=${url}') //`https://api.dhamzxploit.my.id/api/canvas/circle?url=${url}`
+  let wanted = `https://api.dhamzxploit.my.id/api/canvas/circle?url=${url}`
   let stiker = await sticker(null, wanted, 'circle', 'games-wabot')
   conn.sendMessage(m.chat, stiker, MessageType.sticker, {
     quoted: m
