@@ -5,5 +5,6 @@ let handler = async (m, { conn }) => {
 }
 handler.help = ['awoo']
 handler.tags = ['anime']
+handler.group = true
 handler.command = /^(awoo)$/i
 module.exports = handler
