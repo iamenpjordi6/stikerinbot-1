@@ -6,7 +6,7 @@ let handler = async (m, { conn, usedPrefix }) => {
         throw false
     }
     delete conn.vote[id]
-    m.reply(`Success!`)
+    m.reply(`Voting Ended Successfully!`)
 
 }
 handler.help = ['unvote']
