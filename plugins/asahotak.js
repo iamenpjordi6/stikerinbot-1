@@ -8,7 +8,7 @@ let handler = async (m, { conn, usedPrefix }) => {
         conn.reply(m.chat, 'There are still unanswered questions in this chat', conn.asahotak[id][0])
         throw false
     }
-    let src = await (await fetch('https://gist.githubusercontent.com/iamenpjordi6/fef9d3c702bbe5f97e342a5b8ce68a9c/raw/brainteaser.json')).json()
+    let src = await (await fetch('https://gist.githubusercontent.com/iamenpjordi6/169dcf186813a22f7159b3fe4ad02e5a/raw/brainteaser.json')).json()
     let json = src[Math.floor(Math.random() * src.length)]
     let caption = `
 ${json.question}
