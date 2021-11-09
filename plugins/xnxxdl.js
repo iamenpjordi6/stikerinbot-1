@@ -8,7 +8,7 @@ let handler = async (m, { conn, args }) => {
  let { title, high } = json.result
  m.reply(JSON.stringify(json.result, null, 2))
  for (let { low, type } of json) {
-      conn.sendFile(m.chat, low, 'ig' + (type == 'image' ? '.jpg' : '.mp4'), '© MilfBOT', m)
+      conn.sendFile(m.chat, low, + (type == 'image' ? '.jpg' : '.mp4'), '© MilfBOT', m)
     }
 }
 handler.help = ['xnxxdl'].map(v => v + ' <url>')
