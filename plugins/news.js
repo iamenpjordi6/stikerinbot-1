@@ -7,7 +7,7 @@ let handler = async (m, { conn }) => {
         const data = await response.json();
        
  
-      conn.reply(m.chat, ``Title: ${data.articles[1].title} , 
+      conn.reply(m.chat,`Title: ${data.articles[1].title} , 
 by: ${data.articles[1].author}
 
 Description: ${data.articles[1].description}` .trim(),m)
