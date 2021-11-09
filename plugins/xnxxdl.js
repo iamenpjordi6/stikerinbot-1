@@ -1,13 +1,13 @@
 let fetch = require('node-fetch')
 
 let handler = async (m, { conn, args }) => {
- if (!args[0]) throw 'Uhm..Send mediafire download URL?'
+ if (!args[0]) throw 'Uhm..Send xnxx download URL?'
  let res = await fetch(API('Velgrynd', '/api/xnxxdl', { url: args[0] }))
  if (!res.ok) throw await res.text()
  let json = await res.json()
- let { title, low } = json.result
+ let { title, image } = json.result
  m.reply(JSON.stringify(json.result, null, 2))
- conn.sendFile(m.chat, low, title, '', m)
+ conn.sendFile(m.chat, image, title, '', m)
 }
 handler.help = ['xnxxdl'].map(v => v + ' <url>')
 handler.tags = ['downloader']
