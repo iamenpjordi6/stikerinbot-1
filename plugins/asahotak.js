@@ -13,21 +13,22 @@ let handler = async (m, { conn, usedPrefix }) => {
     let caption = `
 ${json.question}
 
+_Repy to this message with answer_
 Timeout *${(timeout / 1000).toFixed(2)} seconds*
 Type ${usedPrefix}ao for help
 Bonus: ${poin} XP
     `.trim()
     conn.asahotak[id] = [
-        await conn.sendButton(m.chat, caption, '© MilfBOT', 'Bantuan', '.ao', m),
+        await conn.sendButton(m.chat, caption, '© MilfBOT', 'Hint', '.ao', m),
         json, poin,
         setTimeout(async () => {
-            if (conn.asahotak[id]) await conn.sendButton(m.chat, `Time is up!\nThe answer is *${json.answer}*`, '© MilfBOT', 'Brain Teaser', '.asahotak', conn.asahotak[id][0])
+            if (conn.asahotak[id]) await conn.sendButton(m.chat, `Time is up!\nThe answer is *${json.answer}*`, '© MilfBOT', 'Brain Teaser', '.brainteaser', conn.asahotak[id][0])
             delete conn.asahotak[id]
         }, timeout)
     ]
 }
-handler.help = ['asahotak']
+handler.help = ['brainteaser']
 handler.tags = ['game']
-handler.command = /^asahotak/i
+handler.command = /^brainteaser/i
 
 module.exports = handler
