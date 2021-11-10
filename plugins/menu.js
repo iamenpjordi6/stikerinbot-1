@@ -79,7 +79,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'quotes': 'Quotes'
   }
   if (teks == 'admin') tags = {
-    'admin': `Admin ${global.opts['restrict'] ? '' : '(Disabled)'}`
+    'admin': `Admin ${global.opts['restrict'] ? '(Enabled)' : '(Disabled)'}`
   }
   if (teks == 'group') tags = {
     'group': 'Group'
