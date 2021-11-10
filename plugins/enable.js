@@ -233,13 +233,14 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
 ├ delete
 ├ detect
 ├ document
-├ stivker
+├ sticker
+├ restrict
 ├ simi
 ├ welcome
 └────
 Example:
-${usedPrefix}on welcome
-${usedPrefix}off welcome
+${usedPrefix}on\#enable welcome
+${usedPrefix}off\#disable welcome
 `.trim()
       throw false
   }
