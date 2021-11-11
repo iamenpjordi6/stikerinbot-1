@@ -11,7 +11,7 @@ module.exports = {
         if (!isSurrender) {
             let index = room.answer.findIndex(v => v.toLowerCase().replace(/[^\w\s\-]+/, '') === text)
             if (index < 0) {
-                if (Math.max(...room.jawaban.filter((_, index) => !room.answered[index]).map(answer => similarity(answer, text))) >= threshold) m.reply('You are close!')
+                if (Math.max(...room.answer.filter((_, index) => !room.answered[index]).map(answer => similarity(answer, text))) >= threshold) m.reply('You are close!')
                 return !0
             }
             if (room.answered[index]) return !0
