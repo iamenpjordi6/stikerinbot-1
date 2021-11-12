@@ -7,7 +7,7 @@ async function handler(m) {
         this.sendButton(m.chat, 'Masih ada kuis yang belum terjawab di chat ini', '© stikerin', 'Nyerah', 'nyerah', this.game[id].msg)
         throw false
     }
-    let src = await (await fetch('https://gist.githubusercontent.com/iamenpjordi6/679cc869a61daa3aa45f71549c776faf/raw/family100.json')).json()
+    let src = await (await fetch('https://gist.githubusercontent.com/iamenpjordi6/679cc869a61daa3aa45f71549c776faf/raw/family100.json)).json()
     let json = src[Math.floor(Math.random() * src.length)]
     let caption = `
 *Soal:* ${json.soal}
