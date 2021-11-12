@@ -4,25 +4,25 @@ async function handler(m) {
     this.game = this.game ? this.game : {}
     let id = 'family100_' + m.chat
     if (id in this.game) {
-        this.sendButton(m.chat, 'Masih ada kuis yang belum terjawab di chat ini', '© stikerin', 'Nyerah', 'nyerah', this.game[id].msg)
+        this.sendButton(m.chat, 'There are still unanswered quizzes in this chat', '© MilfBOT', 'Give UP', 'giveup', this.game[id].msg)
         throw false
     }
-    let src = await (await fetch('https://raw.githubusercontent.com/BochilTeam/database/master/games/family100.json')).json()
+    let src = await (await fetch('https://gist.githubusercontent.com/iamenpjordi6/679cc869a61daa3aa45f71549c776faf/raw/family100.json')).json()
     let json = src[Math.floor(Math.random() * src.length)]
     let caption = `
-*Soal:* ${json.soal}
+*Question:* ${json.question}
 
-Terdapat *${json.jawaban.length}* jawaban${json.jawaban.find(v => v.includes(' ')) ? `
-(beberapa jawaban terdapat spasi)
+There is *${json.answer.length}* answer${json.answer.find(v => v.includes(' ')) ? `
+(some answers have spaces)
 `: ''}
 
-+${winScore} XP tiap jawaban benar
++${winScore} XP every answer is correct
     `.trim()
     this.game[id] = {
         id,
-        msg: await this.sendButton(m.chat, caption, '© stikerin', 'Nyerah', 'nyerah', m),
+        msg: await this.sendButton(m.chat, caption, '© MilfBOT', 'Give UP', 'giveup', m),
         ...json,
-        terjawab: Array.from(json.jawaban, () => false),
+        Answered: Array.from(json.answer, () => false),
         winScore,
     }
 }
